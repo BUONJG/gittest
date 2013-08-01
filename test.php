@@ -1,13 +1,6 @@
 <?php
 include "../include/include.batch.php";
 
-///////////////
-gbatch("Test");
-///////////////
+echo "Test modif";
 
-gbatch()->log("Test OK");
-
-////////////////
-gbatch()->end();
-////////////////
 ?>
