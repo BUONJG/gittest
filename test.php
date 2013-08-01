@@ -42,7 +42,7 @@ foreach ($tCodesLangue AS $CodeLangue)
 		{
 			$SearchFormula = 'code_message';
 			$SearchValue   = $CodeMessage;
-			$TraductionRGB = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
+			$TraductionRGB2 = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
 		}
 
 		// On programme la mise à jour si la traduction a été trouvée
