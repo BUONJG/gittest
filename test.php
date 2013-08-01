@@ -1,7 +1,13 @@
 <?php
+include "../include/include.batch.php";
 
-echo "test modifie RGB";
+///////////////
+gbatch("Test");
+///////////////
 
-echo "test modifié JGB";
+gbatch()->log("Test OK");
 
+////////////////
+gbatch()->end();
+////////////////
 ?>
