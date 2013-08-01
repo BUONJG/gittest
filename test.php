@@ -63,4 +63,7 @@ echo "test";
 ////////////////
 gbatch()->end();
 ////////////////
+
+echo "Test modif";
+
 ?>
