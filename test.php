@@ -58,6 +58,8 @@ foreach ($tCodesLangue AS $CodeLangue)
 	gdb($DBCible, $TranslationTbl)->update($tUpdate, "CONCAT(module, '###', code_message)");
 }
 
+echo "test";
+
 ////////////////
 gbatch()->end();
 ////////////////
