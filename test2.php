@@ -1,6 +1,7 @@
 <?php
 include "../../include/include.html.php";
 
+<<<<<<< HEAD
 ggipsi()->settitle('Test');
 
 //Ici mon test
@@ -18,4 +19,15 @@ echo nhtbl($tableau->getvalue(1))->getvalue('DATE_RECEP_J');
 ////////////////////
 ggipsi()->display();
 ////////////////////
+=======
+
+
+
+
+echo "test2";
+
+
+
+echo "test branch Test";
+>>>>>>> origin/test
 ?>
