@@ -1,9 +1,6 @@
 <?php
 
 
-
-
-
 echo "test3";
 
 
