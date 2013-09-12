@@ -1,8 +1,12 @@
 <?php
 
 
+<<<<<<< HEAD
 
 echo "test3";
+=======
+echo "test2";
+>>>>>>> test
 
 
 
