@@ -33,24 +33,15 @@ foreach ($tCodesLangue AS $CodeLangue)
 		$Module      = $hMsg->getvalue('module'      , '');
 		$CodeMessage = $hMsg->getvalue('code_message', '');
 
-		// 1 - On recherche un correspondance code * module
-		$SearchFormula = "CONCAT(module, '###', code_message)";
-		$SearchValue   = "{$Module}###{$CodeMessage}";
-		$Traduction = gdb($DBSource, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
-
-		// 2 - On recherche via le code_message simplement
-		if (!(strlen($Traduction) > 0))
-		{
-			$SearchFormula = 'code_message';
-			$SearchValue   = $CodeMessage;
-
-			$Traduction = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
-			$TraductionRGB3 = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
-
-			$TraductionBRA = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
-
-		}
-
+		// On récupère les infos à insérer
+		$sqlSelect = "SELECT clef, module, code_message";
+		$sqlSelect.= "  FROM $TranslationTbl";
+		$sqlSelect.= "  FROM $TranslationTbl";
+		$sqlSelect.= " WHERE lang_fr = '' OR lang_{$CodeLangue} is null";
+		$hTransIds = gdb($DBCible)->execute($sqlSelect)->gethtbl('clef');
+		$nbMsg = count($hTransIds);
+		gbatch()->log("=> Reprise de $nbMsg Messages Ecran");
+		
 		// On programme la mise à jour si la traduction a été trouvée
 		if (strlen($Traduction) > 0)
 		{
