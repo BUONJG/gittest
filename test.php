@@ -50,12 +50,6 @@ foreach ($tCodesLangue AS $CodeLangue)
 			$TraductionBRA = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
 
 		}
-
-		// On programme la mise à jour si la traduction a été trouvée
-		if (strlen($Traduction) > 0)
-		{
-			$tUpdate["{$Module}###{$CodeMessage}"] = array("lang_{$CodeLangue}" => $Traduction);
-		} 
 	}
 
 	////////////////////////////////////////////////////////////////////
