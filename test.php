@@ -50,6 +50,17 @@ foreach ($tCodesLangue AS $CodeLangue)
 			$TraductionBRA = gdb($DBSourceJGB, $TranslationTbl)->getvalue($SearchFormula, $SearchValue, "lang_{$CodeLangue}", '');
 
 		}
+
+		// On récupère les infos à insérer
+		$sqlSelect = "SELECT clef, module, code_message";
+		$sqlSelect.= "  FROM $TranslationTbl";
+		$sqlSelect.= "  FROM $TranslationTbl";
+		$sqlSelect.= " WHERE lang_fr = '' OR lang_{$CodeLangue} is null";
+		$hTransIds = gdb($DBCible)->execute($sqlSelect)->gethtbl('clef');
+		$nbMsg = count($hTransIds);
+		gbatch()->log("=> Reprise de $nbMsg Messages Ecran");
+		
+
 	}
 
 	////////////////////////////////////////////////////////////////////
