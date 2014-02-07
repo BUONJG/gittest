@@ -61,6 +61,9 @@ foreach ($tCodesLangue AS $CodeLangue)
 	gbatch()->log("$CodeLangue - 3 - Mise à jour des codes référencés");
 	////////////////////////////////////////////////////////////////////
 	gdb($DBCible, $TranslationTbl)->update($tUpdate, "CONCAT(module, '###', code_message)");
+
+
+	/// test GIT HUB
 }
 
 echo "test";
