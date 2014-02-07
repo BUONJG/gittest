@@ -18,7 +18,8 @@ foreach ($tCodesLangue AS $CodeLangue)
 	// On récupère les infos à insérer
 	$sqlSelect = "SELECT clef, module, code_message";
 	$sqlSelect.= "  FROM $TranslationTbl";
-	$sqlSelect.= " WHERE lang_{$CodeLangue} = '' OR lang_{$CodeLangue} is null";
+	$sqlSelect.= "  FROM $TranslationTbl";
+	$sqlSelect.= " WHERE lang_fr = '' OR lang_{$CodeLangue} is null";
 	$hTransIds = gdb($DBCible)->execute($sqlSelect)->gethtbl('clef');
 	$nbMsg = count($hTransIds);
 	gbatch()->log("=> Reprise de $nbMsg Messages Ecran");
