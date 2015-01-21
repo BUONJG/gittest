@@ -6,4 +6,6 @@ echo "modifs test4";
 
 echo "hello there !";
 
+// thanks
+
 ?>
