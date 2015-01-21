@@ -2,6 +2,5 @@
 
 // modification en ligne 
 
-//Test commit
 
 ?>
