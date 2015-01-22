@@ -2,4 +2,6 @@
 
 echo "test";
 
+// ok
+
 ?>
