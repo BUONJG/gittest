@@ -1,5 +1,5 @@
 <?php
 
-// Branche RGB
+// Branche RGB pour demo JGB
 
 ?>
